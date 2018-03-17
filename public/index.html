@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css">
+  <title>Style Helper: Creative Writing Style Analysis</title>
+</head>
+<body onload="setdefaultoptions()">
+  <div id="app">
+    <div class="heading">
+      <h1>{{ title }}</h1>
+      <h3>{{ blurb }}</h3>
+    </div>
+    <div id="demoTexts">
+      <p>Your stories: </p>
+      <ul>
+      	<li v-for="story in stories">
+          <button v-on:click="addStory(story)" type="button" class="btn btn-secondary demoButton">{{ story.name }}</button>
+      	</li>
+      </ul>
+    </div>
+    <div class="options">
+      <p>Select the common writing style issues you would like to look for:</p>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm">
+            <p>Trouble words:</p>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="badAdverbCheck">
+              <label class="form-check-label" for="badAdverbCheck">
+                Any -ly adverbs (Earnest Hemmingway said that these were bad. I'm not convinced, but I'm not going to argue with a master)
+              </label>
+            </div>
+            <br>
+            <div id="miniapp" class="form-check">
+              <p>Enter any specific words you would like to watch out for. Words are not case sensitive, but please do not include spaces.</p>
+              <ul>
+                <li v-for="word in troubleWords">
+                  <input class="form-check-input" type="checkbox" v-model="word.selected" v-on:click="toggleWordselected(word)" />
+                  <label v-bind:class="{selected: word.selected}"> {{ word.text }}</label>
+                </li>
+              </ul>
+              <form v-on:submit.prevent="addWord">
+                <input type="text" v-model="nextWord">
+                <button id="addWordButton" type="submit">Add</button>
+            </div>
+          </div>
+          <div class="col-sm">
+            <p>Sentence Structure:</p>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="sentenceLengthCheck">
+              <label class="form-check-label" for="sentenceLengthCheck">
+                Repeated sentence length
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="repeatWordCheck">
+              <label class="form-check-label" for="repeatWordCheck">
+                Repeated first word
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="inputarea" class="inputarea">
+      <p>
+      <p>Title (optional):
+      <input id="storytitle" type="text" placeholder=""></p>
+      <p id="inputHeading">Enter your story here:
+      <button v-on:click="deleteStory" type="button" class="btn btn-secondary btn-sm" id="deletestory">Delete Current Story</button>
+      <button v-on:click="updateStory" type="button" class="btn btn-secondary btn-sm" id="updatestory">Update Existing Story</button>
+      <button v-on:click="saveStory" type="button" class="btn btn-secondary btn-sm" id="savestory">Save New Story</button>
+      <button v-on:click="appAnalyze" type="button" class="btn btn-secondary btn-sm" id="startanalysis">Analyze!</button></p>
+      <textarea class="maininput" id="maintextarea"></textarea>
+    </div>
+
+    <div id="goback">
+      <button v-on:click="appGoBack" type="button" class="btn btn-secondary btn-lg" id="reanalyze">Go back.</button>
+    </div>
+
+    <div id="outputarea">
+
+    </div>
+  </div>
+
+  <footer>
+      <p>Code for this site at <a href="https://github.com/bandrus5/260CreativeProject4">https://github.com/bandrus5/260CreativeProject4</a></p>
+  </footer>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="analyze.js"></script>
+</body>
+</html>

@@ -1,0 +1,204 @@
+
+body {
+  background-color: #FFAB34;
+  color: #402B0D;
+  font-family: 'Playfair Display', serif;
+}
+
+.heading {
+  padding: 30px;
+  text-align: center;
+}
+
+.heading h3 {
+  font-style: italic;
+}
+
+.options {
+  padding-bottom: 40px;
+  display: block;
+  width: 70%;
+  margin: 0 auto;
+  text-align: left;
+}
+
+#demoTexts {
+  padding-bottom: 20px;
+  display: block;
+  width: 70%;
+  margin: 0 auto;
+  text-align: left;
+}
+
+label {
+  padding-left: 10px;
+}
+
+#punctuation {
+  display: none;
+}
+
+#accordion {
+  width: 70%;
+  margin: 0 auto;
+  color: #402B0D;
+}
+
+.btn-link {
+  color: #402B0D;
+}
+
+.btn-link:hover {
+  color: #402B0D;
+  font-style: italic;
+}
+
+.inputarea {
+  display: block;
+  width: 70%;
+  margin: 0 auto;
+  text-align: left;
+}
+.maininput {
+  width: 100%;
+  height: 450px;
+  padding-bottom: 30px;
+}
+
+#goback {
+  width: 70%;
+  margin: 0 auto;
+  text-align: right;
+  display: none;
+  padding-bottom: 10px;
+}
+.highlighted {
+  background-color: grey;
+}
+
+.highlighted1 {
+  text-decoration: underline;
+  color: red;
+  text-decoration-color: red;
+}
+.highlighted2 {
+  text-decoration: underline;
+  color: blue;
+  text-decoration-color: blue;
+}
+.highlighted3 {
+  text-decoration: underline;
+  color: #efd528;
+  text-decoration-color: #efd528;
+}
+.highlighted4 {
+  text-decoration: underline;
+  color: green;
+  text-decoration-color: green;
+}
+.highlighted5 {
+  text-decoration: underline;
+  color: gray;
+  text-decoration-color: gray;
+}
+.highlighted6 {
+  text-decoration: underline;
+  color: orange;
+  text-decoration-color: orange;
+}
+.highlighted7 {
+  text-decoration: underline;
+  color: purple;
+  text-decoration-color: purple;
+}
+
+.highlighted101 {
+  background-color: #ff9999;
+}
+.highlighted102 {
+  background-color: #999fff;
+}
+.highlighted103 {
+  background-color: #999fff;
+}
+.highlighted104 {
+  background-color: #999fff;
+  text-decoration: underline;
+  color: green;
+  text-decoration-color: green;
+}
+#inputHeading {
+  width: 100%;
+}
+
+#deletestory {
+  text-align: right;
+  float: right;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#updatestory {
+  text-align: right;
+  float: right;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#savestory {
+  text-align: right;
+  float: right;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+#startanalysis {
+  text-align: right;
+  float: right;
+  margin-bottom: 10px;
+}
+#outputarea {
+  background-color: white;
+  display: block;
+  width: 70%;
+  margin: 0 auto;
+  text-align: left;
+}
+#outputarea p {
+  padding-left: 10px;
+  padding-bottom: 10px;
+}
+
+
+.demoButton {
+  margin-bottom: 10px;
+}
+
+#storytitle {
+  width: 60%;
+}
+
+ul {
+  list-style: none;
+}
+
+.form-check-input:disabled ~ .form-check-label {
+    color: #402B0D;
+}
+
+footer {
+    padding-top: 70px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    text-align: center;
+}
+
+footer p a {
+    color: black;
+    text-decoration: none;
+    background-color: transparent;
+}
