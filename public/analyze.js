@@ -332,20 +332,6 @@ var app = new Vue({
     currentlyDisplayed: null,
   },
   created: function() {
-    axios.post('/api/stories', {
-       name: "Eragon by Cristopher Paoloni",
-       text: eragonText,
-     }).then(response => {
-       return true;
-   }).catch(err => {
-   });
-   axios.post('/api/stories', {
-      name: "Uncovered by Berkeley Andrus",
-      text: uncoveredText,
-    }).then(response => {
-      return true;
-  }).catch(err => {
-  });
     this.getStories();
   },
   methods: {
