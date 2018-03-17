@@ -7,6 +7,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(express.static('public'))
 
+/*
 let eragonText = "Wind howled through the night, carrying a scent that would change the world. A tall Shade lifted his head and sniffed the air. He looked human except for his crimson hair and maroon eyes."
  + "\nHe blinked in surprise. The message had been correct: they were here. Or was it a trap? He weighed the odds, then said icily, \"Spread out; hide behind trees and bushes. Stop whoever is coming . . . or die. \""
   + "\nAround him shuffled twelve Urgals with short swords and round iron shields painted with black symbols. They resembled men with bowed legs and thick, brutish arms made for crushing. A pair of twisted horns grew above their small ears. The monsters hurried into the brush, grunting as they hid. Soon the rustling quieted and the forest was silent again. "
@@ -168,6 +169,9 @@ let eragon = {id: 0, name: "Eragon by Cristopher Paoloni", text: eragonText};
 let uncovered = {id: 1, name: "Uncovered by Berkeley Andrus", text: uncoveredText};
 let stories = [eragon, uncovered];
 let id = 2;
+*/
+let stories = [];
+let id = 0;
 
 app.get('/api/stories', (req, res) => {
   res.send(stories);
